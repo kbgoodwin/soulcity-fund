@@ -1,56 +1,53 @@
-import Head from 'next/head';
-import { useEffect, useState } from 'react';
+import React from 'react';
 
-export default function Home() {
-  const [investorName, setInvestorName] = useState('Khalid Goodwin');
-  const [totalInvested, setTotalInvested] = useState(250000);
-  const [expectedReturn, setExpectedReturn] = useState(500000);
-  const [dividends, setDividends] = useState(20000);
-
-  useEffect(() => {
-    // You can replace this with live Supabase data later
-  }, []);
+export default function InvestorDashboard() {
+  const investor = {
+    name: 'Khalid Goodwin',
+    totalInvested: 250000,
+    expectedReturn: 500000,
+    dividendsPaid: 20000
+  };
 
   return (
-    <>
-      <Head>
-        <title>Soul City Collective Fund Portal</title>
-        <meta name="description" content="Track your investments in real-time." />
-      </Head>
-      <main className="flex flex-col items-center justify-center min-h-screen bg-slate-50 text-gray-800 px-4 py-12">
-        <h1 className="text-3xl md:text-5xl font-bold text-center mb-6">
-          Welcome, {investorName}
+    <main className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-8">
+        <h1 className="text-3xl font-bold text-blue-900 mb-2">
+          Welcome, {investor.name}
         </h1>
-        <p className="text-center text-lg md:text-xl mb-10">
+        <p className="text-gray-600 mb-6">
           Below is a summary of your Soul City Collective investment performance.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl">
-          <div className="bg-white shadow-lg rounded-2xl p-6 text-center">
-            <h2 className="text-lg font-semibold text-gray-500">Total Invested</h2>
-            <p className="text-2xl font-bold text-blue-600">${totalInvested.toLocaleString()}</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+          <div className="bg-gradient-to-r from-blue-100 to-blue-200 p-6 rounded-xl shadow-md">
+            <h2 className="text-lg font-semibold text-gray-700">Total Invested</h2>
+            <p className="text-2xl font-bold text-blue-900">
+              ${investor.totalInvested.toLocaleString()}
+            </p>
           </div>
 
-          <div className="bg-white shadow-lg rounded-2xl p-6 text-center">
-            <h2 className="text-lg font-semibold text-gray-500">Expected Return</h2>
-            <p className="text-2xl font-bold text-green-600">${expectedReturn.toLocaleString()}</p>
+          <div className="bg-gradient-to-r from-green-100 to-green-200 p-6 rounded-xl shadow-md">
+            <h2 className="text-lg font-semibold text-gray-700">Expected Return</h2>
+            <p className="text-2xl font-bold text-green-900">
+              ${investor.expectedReturn.toLocaleString()}
+            </p>
           </div>
 
-          <div className="bg-white shadow-lg rounded-2xl p-6 text-center">
-            <h2 className="text-lg font-semibold text-gray-500">Dividends Paid</h2>
-            <p className="text-2xl font-bold text-amber-600">${dividends.toLocaleString()}</p>
+          <div className="bg-gradient-to-r from-yellow-100 to-yellow-200 p-6 rounded-xl shadow-md">
+            <h2 className="text-lg font-semibold text-gray-700">Dividends Paid</h2>
+            <p className="text-2xl font-bold text-yellow-900">
+              ${investor.dividendsPaid.toLocaleString()}
+            </p>
           </div>
         </div>
 
-        <div className="mt-12 max-w-3xl text-center text-md text-gray-600">
-          <p>
-            This portal is updated monthly and reflects fund performance for both Phase I and Phase II investments.
-          </p>
+        <div className="text-sm text-gray-500 mt-6">
+          <p>This portal is updated monthly and reflects fund performance for both Phase I and Phase II investments.</p>
           <p className="mt-2">
-            For a full statement or tax documentation, please contact support@soulcityfund.com.
+            For a full statement or tax documentation, please contact <a href="mailto:support@soulcityfund.com" className="text-blue-600 underline">support@soulcityfund.com</a>.
           </p>
         </div>
-      </main>
-    </>
+      </div>
+    </main>
   );
 }
