@@ -1,53 +1,44 @@
-import React from 'react';
-
-export default function InvestorDashboard() {
-  const investor = {
-    name: 'Khalid Goodwin',
-    totalInvested: 250000,
-    expectedReturn: 500000,
-    dividendsPaid: 20000
-  };
-
+export default function Home() {
   return (
-    <main className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-8">
-        <h1 className="text-3xl font-bold text-blue-900 mb-2">
-          Welcome, {investor.name}
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Below is a summary of your Soul City Collective investment performance.
+    <div style={{
+      fontFamily: `'Segoe UI', Roboto, sans-serif`,
+      backgroundColor: '#f0f4f8',
+      minHeight: '100vh',
+      padding: '2rem'
+    }}>
+      <div style={{
+        maxWidth: '700px',
+        margin: '0 auto',
+        backgroundColor: 'white',
+        borderRadius: '16px',
+        padding: '2rem',
+        boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
+      }}>
+        <h1 style={{ color: '#002244' }}>Welcome, Khalid Goodwin</h1>
+        <p>Below is a summary of your Soul City Collective investment performance.</p>
+
+        <div style={{ marginTop: '2rem' }}>
+          <h2>Total Invested</h2>
+          <p style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>$250,000</p>
+        </div>
+
+        <div style={{ marginTop: '1rem' }}>
+          <h2>Expected Return</h2>
+          <p style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>$500,000</p>
+        </div>
+
+        <div style={{ marginTop: '1rem' }}>
+          <h2>Dividends Paid</h2>
+          <p style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>$20,000</p>
+        </div>
+
+        <p style={{ marginTop: '2rem', fontSize: '0.9rem', color: '#555' }}>
+          This portal is updated monthly and reflects fund performance for both Phase I and Phase II investments.
         </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-          <div className="bg-gradient-to-r from-blue-100 to-blue-200 p-6 rounded-xl shadow-md">
-            <h2 className="text-lg font-semibold text-gray-700">Total Invested</h2>
-            <p className="text-2xl font-bold text-blue-900">
-              ${investor.totalInvested.toLocaleString()}
-            </p>
-          </div>
-
-          <div className="bg-gradient-to-r from-green-100 to-green-200 p-6 rounded-xl shadow-md">
-            <h2 className="text-lg font-semibold text-gray-700">Expected Return</h2>
-            <p className="text-2xl font-bold text-green-900">
-              ${investor.expectedReturn.toLocaleString()}
-            </p>
-          </div>
-
-          <div className="bg-gradient-to-r from-yellow-100 to-yellow-200 p-6 rounded-xl shadow-md">
-            <h2 className="text-lg font-semibold text-gray-700">Dividends Paid</h2>
-            <p className="text-2xl font-bold text-yellow-900">
-              ${investor.dividendsPaid.toLocaleString()}
-            </p>
-          </div>
-        </div>
-
-        <div className="text-sm text-gray-500 mt-6">
-          <p>This portal is updated monthly and reflects fund performance for both Phase I and Phase II investments.</p>
-          <p className="mt-2">
-            For a full statement or tax documentation, please contact <a href="mailto:support@soulcityfund.com" className="text-blue-600 underline">support@soulcityfund.com</a>.
-          </p>
-        </div>
+        <p style={{ fontSize: '0.9rem', color: '#555' }}>
+          For a full statement or tax documentation, please contact <a href="mailto:support@soulcityfund.com">support@soulcityfund.com</a>.
+        </p>
       </div>
-    </main>
-  );
+    </div>
+  )
 }
