@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import Header from '../components/Header';
 
 export default function Home() {
@@ -49,4 +48,4 @@ export default function Home() {
     </div>
   )
 }
->>>>>>> b27aaed2a53c60f6531d9c52c524beb51a00de46
+
